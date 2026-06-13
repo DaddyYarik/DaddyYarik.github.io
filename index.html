@@ -77,7 +77,7 @@
       border-color: var(--accent); transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
-    .thumb { position: relative; aspect-ratio: 2 / 1; overflow: hidden; background: #0d1219; }
+    .thumb { display: block; position: relative; aspect-ratio: 2 / 1; overflow: hidden; background: #0d1219; }
     .thumb img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform .35s ease;
@@ -87,6 +87,18 @@
     .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
     .card h3 span { color: var(--accent); }
     .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .card-actions { display: flex; gap: 10px; margin-top: 16px; }
+    .btn {
+      flex: 1; text-align: center; text-decoration: none;
+      font-size: 0.85rem; padding: 9px 12px; border-radius: 8px;
+      border: 1px solid var(--border); color: var(--fg); background: transparent;
+      transition: border-color .15s, background .15s, color .15s, transform .1s;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #06231c; font-weight: 600; }
+    .btn-primary:hover { background: #5fe3c0; border-color: #5fe3c0; color: #06231c; }
 
     footer { color: var(--muted); font-size: 0.85rem; padding: 60px 0 40px; border-top: 1px solid var(--border); margin-top: 60px; }
     footer a { color: var(--accent-2); }
@@ -144,38 +156,54 @@
     <main>
       <h2 data-ru="# проекты" data-en="# projects"># проекты</h2>
       <div class="grid">
-        <a class="card" href="https://github.com/DaddyYarik/gitvibe" target="_blank" rel="noopener">
-          <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/gitvibe/main/docs/roast.png" alt="gitvibe" loading="lazy" /></div>
+        <div class="card">
+          <a class="thumb" href="https://github.com/DaddyYarik/gitvibe" target="_blank" rel="noopener" aria-label="gitvibe на GitHub"><img src="https://raw.githubusercontent.com/DaddyYarik/gitvibe/main/docs/roast.png" alt="gitvibe" loading="lazy" /></a>
           <div class="card-body">
             <h3><span>gitvibe</span></h3>
             <p data-ru="«Git Wrapped» — CLI, превращающий твою git-историю в красивую годовую сводку."
                data-en="'Git Wrapped' — a CLI that turns your git history into a slick yearly recap.">«Git Wrapped» — CLI, превращающий твою git-историю в красивую годовую сводку.</p>
+            <div class="card-actions">
+              <a class="btn" href="https://github.com/DaddyYarik/gitvibe" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/DaddyYarik/gitvibe/archive/refs/heads/main.zip" data-ru="Скачать .zip" data-en="Download .zip">Скачать .zip</a>
+            </div>
           </div>
-        </a>
-        <a class="card" href="https://github.com/DaddyYarik/devlog" target="_blank" rel="noopener">
-          <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/devlog/main/demo.svg" alt="devlog" loading="lazy" /></div>
+        </div>
+        <div class="card">
+          <a class="thumb" href="https://github.com/DaddyYarik/devlog" target="_blank" rel="noopener" aria-label="devlog на GitHub"><img src="https://raw.githubusercontent.com/DaddyYarik/devlog/main/demo.svg" alt="devlog" loading="lazy" /></a>
           <div class="card-body">
             <h3><span>devlog</span></h3>
             <p data-ru="Ежедневный лог разработчика и генератор стендапов прямо из терминала."
                data-en="A daily developer log and standup generator, right from the terminal.">Ежедневный лог разработчика и генератор стендапов прямо из терминала.</p>
+            <div class="card-actions">
+              <a class="btn" href="https://github.com/DaddyYarik/devlog" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/DaddyYarik/devlog/archive/refs/heads/main.zip" data-ru="Скачать .zip" data-en="Download .zip">Скачать .zip</a>
+            </div>
           </div>
-        </a>
-        <a class="card" href="https://github.com/DaddyYarik/HackerPanel" target="_blank" rel="noopener">
-          <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/HackerPanel/main/screenshots/05-matrix.png" alt="HackerPanel" loading="lazy" /></div>
+        </div>
+        <div class="card">
+          <a class="thumb" href="https://github.com/DaddyYarik/HackerPanel" target="_blank" rel="noopener" aria-label="HackerPanel на GitHub"><img src="https://raw.githubusercontent.com/DaddyYarik/HackerPanel/main/screenshots/05-matrix.png" alt="HackerPanel" loading="lazy" /></a>
           <div class="card-body">
             <h3><span>HackerPanel</span></h3>
             <p data-ru="Кибепанк-панель на Tkinter — фановый интерфейс «как в кино»."
                data-en="A cyberpunk Tkinter panel — a fun 'just like in the movies' interface.">Кибепанк-панель на Tkinter — фановый интерфейс «как в кино».</p>
+            <div class="card-actions">
+              <a class="btn" href="https://github.com/DaddyYarik/HackerPanel" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/DaddyYarik/HackerPanel/archive/refs/heads/main.zip" data-ru="Скачать .zip" data-en="Download .zip">Скачать .zip</a>
+            </div>
           </div>
-        </a>
-        <a class="card" href="https://github.com/DaddyYarik/PhantomBreach" target="_blank" rel="noopener">
-          <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/PhantomBreach/main/assets/demo.gif" alt="PhantomBreach" loading="lazy" /></div>
+        </div>
+        <div class="card">
+          <a class="thumb" href="https://github.com/DaddyYarik/PhantomBreach" target="_blank" rel="noopener" aria-label="PhantomBreach на GitHub"><img src="https://raw.githubusercontent.com/DaddyYarik/PhantomBreach/main/assets/demo.gif" alt="PhantomBreach" loading="lazy" /></a>
           <div class="card-body">
             <h3><span>PhantomBreach</span></h3>
             <p data-ru="Прикол-симулятор «голливудского хакера»: matrix-дождь, звуки, попапы."
                data-en="A 'Hollywood hacker' prank simulator: matrix rain, sounds, popups.">Прикол-симулятор «голливудского хакера»: matrix-дождь, звуки, попапы.</p>
+            <div class="card-actions">
+              <a class="btn" href="https://github.com/DaddyYarik/PhantomBreach" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/DaddyYarik/PhantomBreach/archive/refs/heads/main.zip" data-ru="Скачать .zip" data-en="Download .zip">Скачать .zip</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </main>
 
