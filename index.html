@@ -61,6 +61,9 @@
 
     h2 { font-size: 1.1rem; color: var(--accent-2); margin: 56px 0 18px; }
 
+    .about p { color: var(--muted); max-width: 64ch; }
+    .about p + p { margin-top: 14px; }
+
     .grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
     @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
 
@@ -164,6 +167,14 @@
     </header>
 
     <main>
+      <section class="about">
+        <h2 data-ru="# обо мне" data-en="# about me"># обо мне</h2>
+        <p data-ru="Меня зовут DaddyYarik, я разработчик на Python. Люблю собирать небольшие, но законченные инструменты для терминала, а время от времени делаю что-нибудь забавное — вроде «голливудских хакерских» симуляторов."
+           data-en="I'm DaddyYarik, a Python developer. I enjoy building small but complete command-line tools and, every now and then, something playful — like 'Hollywood hacker' simulators.">Меня зовут DaddyYarik, я разработчик на Python. Люблю собирать небольшие, но законченные инструменты для терминала, а время от времени делаю что-нибудь забавное — вроде «голливудских хакерских» симуляторов.</p>
+        <p data-ru="Выкладываю всё на GitHub: для меня это и площадка для экспериментов, и способ прокачивать навыки. Открыт к фидбэку и интересным проектам."
+           data-en="I publish everything on GitHub — it's both my playground and the way I level up. Always open to feedback and interesting projects.">Выкладываю всё на GitHub: для меня это и площадка для экспериментов, и способ прокачивать навыки. Открыт к фидбэку и интересным проектам.</p>
+      </section>
+
       <h2 data-ru="# проекты" data-en="# projects"># проекты</h2>
       <div class="grid">
         <div class="card">
