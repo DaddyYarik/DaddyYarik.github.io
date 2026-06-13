@@ -64,6 +64,16 @@
     .about p { color: var(--muted); max-width: 64ch; }
     .about p + p { margin-top: 14px; }
 
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills .chip {
+      font-size: 0.85rem; color: var(--fg);
+      background: var(--bg-soft); border: 1px solid var(--border);
+      padding: 7px 13px; border-radius: 999px;
+      transition: border-color .15s, color .15s, transform .15s;
+    }
+    .skills .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .skills .chip::before { content: "›"; color: var(--accent); margin-right: 7px; }
+
     .grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
     @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
 
@@ -174,6 +184,19 @@
         <p data-ru="Мне нравится, когда инструмент делает одну вещь — но делает её хорошо и красиво смотрится прямо в терминале. Каждый новый репозиторий для меня это эксперимент: придумать идею, довести до релиза и выложить на GitHub. Есть крутая задумка или хочется поболтать о коде — пиши, я на связи."
            data-en="I like it when a tool does one thing — but does it well and looks sharp right in the terminal. Every new repo is an experiment: come up with an idea, ship it, push it to GitHub. Got a cool idea or just want to talk code? Drop me a line — I'm around.">Мне нравится, когда инструмент делает одну вещь — но делает её хорошо и красиво смотрится прямо в терминале. Каждый новый репозиторий для меня это эксперимент: придумать идею, довести до релиза и выложить на GitHub. Есть крутая задумка или хочется поболтать о коде — пиши, я на связи.</p>
       </section>
+
+      <h2 data-ru="# навыки" data-en="# skills"># навыки</h2>
+      <div class="skills">
+        <span class="chip">Python</span>
+        <span class="chip">CLI / argparse</span>
+        <span class="chip">Tkinter GUI</span>
+        <span class="chip">Git &amp; GitHub</span>
+        <span class="chip">Terminal UI</span>
+        <span class="chip" data-ru="Автоматизация" data-en="Automation">Автоматизация</span>
+        <span class="chip">pip / PyPI</span>
+        <span class="chip">Bash / PowerShell</span>
+        <span class="chip" data-ru="Кроссплатформенность" data-en="Cross-platform">Кроссплатформенность</span>
+      </div>
 
       <h2 data-ru="# проекты" data-en="# projects"># проекты</h2>
       <div class="grid">
