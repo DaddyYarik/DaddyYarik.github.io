@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DaddyYarik — projects</title>
-  <meta name="description" content="Личная страница DaddyYarik: pet-проекты на Python и не только." />
+  <meta name="description" content="DaddyYarik's personal page: pet projects in Python and beyond." />
   <style>
     :root {
       --bg: #0b0f14;
@@ -91,6 +91,20 @@
     footer { color: var(--muted); font-size: 0.85rem; padding: 60px 0 40px; border-top: 1px solid var(--border); margin-top: 60px; }
     footer a { color: var(--accent-2); }
 
+    /* переключатель языка */
+    .lang {
+      position: fixed; top: 16px; right: 16px; z-index: 2;
+      display: flex; border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; background: var(--bg-soft);
+    }
+    .lang button {
+      font: inherit; font-size: 0.8rem; cursor: pointer;
+      padding: 6px 10px; border: 0; background: transparent; color: var(--muted);
+      transition: background .15s, color .15s;
+    }
+    .lang button.active { background: var(--accent); color: #06231c; font-weight: 600; }
+    .lang button:not(.active):hover { color: var(--fg); }
+
     @media (prefers-reduced-motion: reduce) {
       .card { opacity: 1; transform: none; transition: none; }
       #matrix { display: none; }
@@ -99,12 +113,18 @@
 </head>
 <body>
   <canvas id="matrix"></canvas>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="ru">RU</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
   <div class="wrap">
     <header>
       <img class="avatar" src="https://github.com/DaddyYarik.png" alt="DaddyYarik" width="96" height="96" loading="lazy" />
       <div class="tag">~/DaddyYarik<span class="blink">█</span></div>
-      <h1>Привет, я DaddyYarik</h1>
-      <p class="lead">
+      <h1 data-ru="Привет, я DaddyYarik" data-en="Hi, I'm DaddyYarik">Привет, я DaddyYarik</h1>
+      <p class="lead"
+         data-ru="Делаю небольшие инструменты и фановые проекты на Python. CLI-тулзы, генераторы и пара «голливудских хакерских» приколов."
+         data-en="I build small tools and fun projects in Python — CLI utilities, generators, and a couple of 'Hollywood hacker' gags.">
         Делаю небольшие инструменты и фановые проекты на Python.
         CLI-тулзы, генераторы и пара «голливудских хакерских» приколов.
       </p>
@@ -122,46 +142,82 @@
     </header>
 
     <main>
-      <h2># проекты</h2>
+      <h2 data-ru="# проекты" data-en="# projects"># проекты</h2>
       <div class="grid">
         <a class="card" href="https://github.com/DaddyYarik/gitvibe" target="_blank" rel="noopener">
           <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/gitvibe/main/docs/roast.png" alt="gitvibe" loading="lazy" /></div>
           <div class="card-body">
             <h3><span>gitvibe</span></h3>
-            <p>«Git Wrapped» — CLI, превращающий твою git-историю в красивую годовую сводку.</p>
+            <p data-ru="«Git Wrapped» — CLI, превращающий твою git-историю в красивую годовую сводку."
+               data-en="'Git Wrapped' — a CLI that turns your git history into a slick yearly recap.">«Git Wrapped» — CLI, превращающий твою git-историю в красивую годовую сводку.</p>
           </div>
         </a>
         <a class="card" href="https://github.com/DaddyYarik/devlog" target="_blank" rel="noopener">
           <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/devlog/main/demo.svg" alt="devlog" loading="lazy" /></div>
           <div class="card-body">
             <h3><span>devlog</span></h3>
-            <p>Ежедневный лог разработчика и генератор стендапов прямо из терминала.</p>
+            <p data-ru="Ежедневный лог разработчика и генератор стендапов прямо из терминала."
+               data-en="A daily developer log and standup generator, right from the terminal.">Ежедневный лог разработчика и генератор стендапов прямо из терминала.</p>
           </div>
         </a>
         <a class="card" href="https://github.com/DaddyYarik/HackerPanel" target="_blank" rel="noopener">
           <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/HackerPanel/main/screenshots/05-matrix.png" alt="HackerPanel" loading="lazy" /></div>
           <div class="card-body">
             <h3><span>HackerPanel</span></h3>
-            <p>Кибепанк-панель на Tkinter — фановый интерфейс «как в кино».</p>
+            <p data-ru="Кибепанк-панель на Tkinter — фановый интерфейс «как в кино»."
+               data-en="A cyberpunk Tkinter panel — a fun 'just like in the movies' interface.">Кибепанк-панель на Tkinter — фановый интерфейс «как в кино».</p>
           </div>
         </a>
         <a class="card" href="https://github.com/DaddyYarik/PhantomBreach" target="_blank" rel="noopener">
           <div class="thumb"><img src="https://raw.githubusercontent.com/DaddyYarik/PhantomBreach/main/assets/demo.gif" alt="PhantomBreach" loading="lazy" /></div>
           <div class="card-body">
             <h3><span>PhantomBreach</span></h3>
-            <p>Прикол-симулятор «голливудского хакера»: matrix-дождь, звуки, попапы.</p>
+            <p data-ru="Прикол-симулятор «голливудского хакера»: matrix-дождь, звуки, попапы."
+               data-en="A 'Hollywood hacker' prank simulator: matrix rain, sounds, popups.">Прикол-симулятор «голливудского хакера»: matrix-дождь, звуки, попапы.</p>
           </div>
         </a>
       </div>
     </main>
 
     <footer>
-      <p>© <span id="year"></span> DaddyYarik · собрано вручную, без фреймворков.</p>
+      <p>© <span id="year"></span> DaddyYarik · <span data-ru="собрано вручную, без фреймворков." data-en="handcrafted, no frameworks.">собрано вручную, без фреймворков.</span></p>
     </footer>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ---- язык: СНГ -> русский, остальные -> английский ----
+    (function () {
+      var CIS = ["ru", "uk", "be", "kk", "ky", "uz", "tg", "hy", "az", "tk", "mo"];
+      function detect() {
+        var saved = localStorage.getItem("lang");
+        if (saved === "ru" || saved === "en") return saved;
+        var langs = navigator.languages || [navigator.language || "en"];
+        for (var i = 0; i < langs.length; i++) {
+          var code = (langs[i] || "").toLowerCase().split("-")[0];
+          if (CIS.indexOf(code) !== -1) return "ru";
+        }
+        return "en";
+      }
+      function apply(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-ru][data-en]").forEach(function (el) {
+          var t = el.getAttribute("data-" + lang);
+          if (t !== null) el.textContent = t;
+        });
+        document.querySelectorAll(".lang button").forEach(function (b) {
+          b.classList.toggle("active", b.dataset.lang === lang);
+        });
+      }
+      apply(detect());
+      document.querySelectorAll(".lang button").forEach(function (b) {
+        b.addEventListener("click", function () {
+          localStorage.setItem("lang", b.dataset.lang);
+          apply(b.dataset.lang);
+        });
+      });
+    })();
 
     // плавное появление карточек при скролле
     const io = new IntersectionObserver((entries) => {
